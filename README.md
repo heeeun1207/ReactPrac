@@ -23,3 +23,11 @@ todo 배열을 porps로 받아 온 후, 이를 배열 내장 함수 map을 사�
 TodoListitem 컴포넌트로 변환하여 보여 준다.
 
 ---
+
+### react-icons 아이콘 사용하기
+
+[React Icons](https://react-icons.github.io/react-icons/icons?name=md)
+
+```
+import { IconName } from "react-icons/md";
+```
