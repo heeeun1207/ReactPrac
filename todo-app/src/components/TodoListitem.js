@@ -1,17 +1,19 @@
 import {
   MdCheckBoxOutlineBlank,
-  // MdCheckBox,
-  //MdCheckBox 나중에 할 일이 완료되었을 때 체크된 상태를 보여주기 위해 사용할 아이콘 
+  MdCheckBox,
   MdRemoveCircleOutline,
 } from 'react-icons/md';
+import cn from 'classnames';
 import './TodoListitem.scss'
 
-const TodoListitem = () => {
+const TodoListitem = ({ todo }) => {
+  const { text, checked } = todo;
+
   return (
     <div className="TodoListitem">
-      <div className="checkbox">
-        <MdCheckBoxOutlineBlank />
-        <div className="text">할 일</div>
+      <div className={cn("checkbox", { checked })}>
+        {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+        <div className="text">{text}</div>
       </div>
       <div className="remove">
         <MdRemoveCircleOutline />
