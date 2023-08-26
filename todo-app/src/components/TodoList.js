@@ -1,4 +1,4 @@
-import TodoListitem from './TodoList';
+import TodoListitem from './TodoListitem';
 import './TodoList.scss';
 
 const TodoList = () => {
