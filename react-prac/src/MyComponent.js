@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const MyComponent = ({ name, children }) => {
@@ -8,8 +9,12 @@ const MyComponent = ({ name, children }) => {
     </div>
   );
 };
-MyComponent.defaultProps = {
+MyComponent.prototype = {
   name: 'name : 기본 이름'
 };
 
+MyComponent.propTypes = {
+  name: PropTypes.string
+};
+//name 값이 문자열이 아닌 다른 값의 형태로 전달되면 경고메시지를 출력한다. 
 export default MyComponent;
