@@ -38,6 +38,8 @@ React 컴포넌트와 관련된 파일 이름, 폴더 이름은 <br>
 
 ## PropTypes 종류들
 
+[https://github.com/facebook/prop-types](https://github.com/facebook/prop-types)
+
 - array
 - bool : boolean
 - func : function
@@ -46,7 +48,7 @@ React 컴포넌트와 관련된 파일 이름, 폴더 이름은 <br>
 - string
 - symbol : ES6의 Symbol
 - node : 렌더링할 수 있는 모든 것 <br>
-  - (숫자, 문자열, 혹은 JSX코드. children도 node PropType이다.)
+  - 숫자, 문자열, 혹은 JSX코드. children도 node PropType이다.
 - instanceOf(클래스)
 - any : 아무 종류
   <br>등등
