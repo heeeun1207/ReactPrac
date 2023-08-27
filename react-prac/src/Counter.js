@@ -17,7 +17,9 @@ class Counter extends Component {
             const { number, fixedNumber } = this.state;
             this.setState({
               number: number + 1, fixedNumber
-              // fixedNumber: fixedNumber + 1
+            });
+            this.setState({
+              number: this.state.number + 1
             });
           }}
         >
