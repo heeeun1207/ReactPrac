@@ -33,3 +33,20 @@ React 컴포넌트와 관련된 파일 이름, 폴더 이름은 <br>
 리액트 공식 메뉴얼에서는 새로운 컴포넌트를 작성할 때 함수 컴포넌트와 Hooks 사용을 권장하고 있다. <br>
 따라서 초반부에는 클래스형 컴포넌트를 주로 사용하면서 기능을 익히고,
 후반부에는 Hooks을 완벽히 이해한 후 <br> 함수 컴포넌트와 Hooks 기반의 컴포넌트를 활용하여 작성해보기로 한다!
+
+---
+
+## PropTypes 종류들
+
+- array
+- bool : boolean
+- func : function
+- number
+- object
+- string
+- symbol : ES6의 Symbol
+- node : 렌더링할 수 있는 모든 것 <br>
+  - (숫자, 문자열, 혹은 JSX코드. children도 node PropType이다.)
+- instanceOf(클래스)
+- any : 아무 종류
+  <br>등등
