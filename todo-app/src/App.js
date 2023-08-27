@@ -1,12 +1,10 @@
-import { useState } from 'react';
-// todos상태를 정의하고 TodoList의 props로 전달하기 
+import { useState, useCallback, useRef } from 'react';
 import TodoInsert from './components/TodoInsert';
 import TodoTemplate from './components/TodoTemplate';
 import TodoList from './components/TodoList';
 
 
 const App = () => {
-  // todos 배열 안에 있는 객체에 각 항목의 고유 id, 내용, 완료 여부를 알려주는 값이 포함되어 있다.
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -24,10 +22,29 @@ const App = () => {
       checked: false,
     },
   ]);
+
+  // 고윳값으로 사용될 id
+  //* useState 대신 useRef를 사용해서 변수를 만드는 이유?
+  // id값은 리렌더링될 필요가 없이 단순히 새로운 항목을 만들때 참조되는 값이기 때문이다. 
+  const nextId = useRef(4);
+
+  //* props로 전달해야 할 함수를 만들 때 useCallback을 사용해서 함수를 감싸는것을 습관화하자
+  const onInsert = useCallback(
+    text => {
+      const todo = {
+        id: nextId.current,
+        text,
+        checked: false,
+      };
+      setTodos(todos.concat(todo));
+      nextId.current += 1; //nextId 1씩 더하기
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
-      <TodoInsert />
-      {/* TodoList에서 todos 배열 값들을 받아 온 후 Todoitem으로 변환해서 렌더링하도록 설정해준다. */}
+      <TodoInsert onInsert={onInsert} />
       <TodoList todos={todos} />
     </TodoTemplate>
   );
