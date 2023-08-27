@@ -2,9 +2,15 @@ import React, { Component } from 'react'; // React 모듈을 임포트해야 합
 import PropTypes from 'prop-types';
 
 class MyComponent extends Component {
+  static defaultProps = {
+    name: '기본이름 : name'
+  };
+  static propTypes = {
+    name: PropTypes.string,
+    favoritNumber: PropTypes.number.isRequired
+  };
   render() {
-    const { name, favoritNumber, children } = this.props; // 오타 수정 favoritNumber
-    // 비구조화 할당 
+    const { name, favoritNumber, children } = this.props;
 
     return (
       <div>
@@ -15,15 +21,5 @@ class MyComponent extends Component {
     );
   }
 }
-
-//prototype -> defaultProps로 수정
-MyComponent.defaultProps = {
-  name: '기본 이름'
-};
-
-MyComponent.propTypes = {
-  name: PropTypes.string,
-  favoriteNumber: PropTypes.number.isRequired
-};
 
 export default MyComponent;
