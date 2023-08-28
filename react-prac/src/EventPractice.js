@@ -4,7 +4,7 @@ class EventPractice extends Component {
 
   state = {
     message: ''
-  } // state 초깃값을 설정
+  }
   render() {
     return (
       <div>
@@ -18,12 +18,19 @@ class EventPractice extends Component {
             (e) => {
               this.setState({
                 message: e.target.value
-                //this.setState 메서드를 호출하여 state를 업데이트 
-                //input의 value 값을 state에 있는 값으로 설정
               })
             }
           }
         />
+        <button onClick={
+          () => {
+            alert(this.state.message);
+            this.setState({
+              message: ''
+              // 클릭 이벤트 발생후 메시지 값을 공백으로 설정
+            });
+          }
+        }>확인</button>
       </div>
     );
   }
