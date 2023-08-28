@@ -23,12 +23,16 @@ const App = () => {
     },
   ]);
 
-  // 고윳값으로 사용될 id
-  //* useState 대신 useRef를 사용해서 변수를 만드는 이유?
-  // id값은 리렌더링될 필요가 없이 단순히 새로운 항목을 만들때 참조되는 값이기 때문이다. 
+  const onRemove = useCallback(
+    id => {
+      setTodos(todos.filter(todo => todo.id !== id));
+    },
+    [todos],
+  );
+
   const nextId = useRef(4);
 
-  //* props로 전달해야 할 함수를 만들 때 useCallback을 사용해서 함수를 감싸는것을 습관화하자
+
   const onInsert = useCallback(
     text => {
       const todo = {
@@ -45,7 +49,7 @@ const App = () => {
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={onRemove} />
     </TodoTemplate>
   );
 };
