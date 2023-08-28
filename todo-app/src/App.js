@@ -23,8 +23,19 @@ const App = () => {
     },
   ]);
 
+  const onToggle = useCallback(
+    id => {
+      setTodos(
+        todos.map(todo =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,),
+      );
+    },
+    [todos],
+  );
+
   const onRemove = useCallback(
     id => {
+      // filter 함수를 사용하여 특정 id를 가진 항목을 제외한 새로운 배열을 생성한다.
       setTodos(todos.filter(todo => todo.id !== id));
     },
     [todos],
@@ -49,7 +60,7 @@ const App = () => {
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} />
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
 };
