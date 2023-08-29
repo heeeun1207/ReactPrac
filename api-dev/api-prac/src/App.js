@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+// axios 자바스크립트 라이브러리
+// Promise 기반의 API를 제공한다.
+// 여러가지 메서드를 통해 서버로부터 데이터를 가져오거나 보낸다. 
 const App = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/items')
+
       .then(response => {
         setItems(response.data);
       })
@@ -18,7 +21,8 @@ const App = () => {
       <h1>Items</h1>
       <ul>
         {filteredItems.map(item => (
-          <li key={item.id}>{item.text}</li>
+          <li key={item.id}>
+            {item.text}</li>
         ))}
       </ul>
     </div>
