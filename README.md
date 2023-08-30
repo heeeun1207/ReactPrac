@@ -26,7 +26,7 @@ TodoListitem 컴포넌트로 변환하여 보여 준다.
 
 ## React DevTools
 
-![React DevTools](./React-DevTools.png)
+![React DevTools](./images/React-DevTools.png)
 
 ### 느려지는 원인 분석하기
 
@@ -40,6 +40,12 @@ TodoListitem 컴포넌트로 변환하여 보여 준다.
 ### 함수가 계속 만들어지는 상황을 방지하기
 
 1. useState 함수형 업데이트 기능 사용하기
+   ![React DevTools](./images/React-memo.png)
+
+- React.memo를 통해 리렌더링 방지<br>
+  ![React DevTools](./images/Render-speed.png)
+- 리렌더링되는 컴포넌트 수 줄이기<br>
+
 2. useReducer 사용하기
 
 ---
