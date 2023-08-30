@@ -24,6 +24,21 @@ TodoListitem 컴포넌트로 변환하여 보여 준다.
 
 ---
 
+## React DevTools
+
+![React DevTools](/Users/heeeun/Desktop/ReactPrac/React-DevTools.png)
+
+### 느려지는 원인 분석하기
+
+1. 자신이 전달받은 props가 변경될 때
+2. 자신의 state가 바뀔 때
+3. 부모 컴포넌트가 리렌더링될 때
+4. forceUpdate 함수가 실행될 때
+
+---
+
+## 기타 자료 모음
+
 ### react-icons 아이콘 사용하기
 
 [React Icons](https://react-icons.github.io/react-icons/icons?name=md)

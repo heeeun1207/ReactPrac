@@ -2,8 +2,21 @@ import React, { useState, useRef, useCallback } from "react";
 import TodoTemplate from "./components/TodoTemplate";
 import TodoInsert from "./components/TodoInsert";
 import TodoList from "./components/TodoList";
-
+// 많은 데이터 렌더링하기 
+//createBulkTodos 데이터 100개 생성해보기. 
+// function createBulkTodos() {
+//   const array = [];
+//   for (let i = 1; 1 <= 100; i++) {
+//     array.push({
+//       id: i,
+//       text: `할 일 ${i}`,
+//       checked: false,
+//     });
+//   }
+//   return array;
+// }
 const App = () => {
+  // const [todos, setTodos] = useState(createBulkTodos);
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -38,6 +51,8 @@ const App = () => {
     },
     [todos],
   )
+  // 고윳값으로 사용될 id
+  // ref 를 사용해서 변수 담기
   const nextId = useRef(4);
 
   const onInsert = useCallback(
