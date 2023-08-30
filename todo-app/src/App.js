@@ -1,8 +1,7 @@
-import { useState, useCallback, useRef } from 'react';
-import TodoInsert from './components/TodoInsert';
-import TodoTemplate from './components/TodoTemplate';
-import TodoList from './components/TodoList';
-
+import React, { useState, useRef, useCallback } from "react";
+import TodoTemplate from "./components/TodoTemplate";
+import TodoInsert from "./components/TodoInsert";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -35,14 +34,11 @@ const App = () => {
 
   const onRemove = useCallback(
     id => {
-      // filter 함수를 사용하여 특정 id를 가진 항목을 제외한 새로운 배열을 생성한다.
       setTodos(todos.filter(todo => todo.id !== id));
     },
     [todos],
-  );
-
+  )
   const nextId = useRef(4);
-
 
   const onInsert = useCallback(
     text => {
@@ -52,7 +48,7 @@ const App = () => {
         checked: false,
       };
       setTodos(todos.concat(todo));
-      nextId.current += 1; //nextId 1씩 더하기
+      nextId.current += 1 // nextId 1씩 더하기 
     },
     [todos],
   );
@@ -64,7 +60,5 @@ const App = () => {
     </TodoTemplate>
   );
 };
-
-
 
 export default App;
