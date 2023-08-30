@@ -26,7 +26,7 @@ TodoListitem 컴포넌트로 변환하여 보여 준다.
 
 ## React DevTools
 
-![React DevTools](file:///Users/heeeun/Desktop/ReactPrac/React-DevTools.png)
+![React DevTools](./React-DevTools.png)
 
 ### 느려지는 원인 분석하기
 
