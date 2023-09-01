@@ -3,11 +3,10 @@ const app = express();
 const expressHandlebars = require('express-handlebars');
 
 const port = process.env.PORT || 3000; //포트 정의
-
+app.use(express.static(__dirname + '/public'));
 // 핸들바 뷰 엔진 설정
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
 app.get('/', (req, res) =>
   res.render('home'));
 
