@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { List } from 'react-virtualized';
 import TodoListitem from './TodoListitem';
 import './TodoList.scss';
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
+  const rowRenderer = useCallback(
+    ({ index, key, style }) => {
+      const todo = todos[index];
+      return (
+        <TodoListitem
+          todo={todo}
+          key={key}
+          onRemove={onRemove}
+          onToggle={onToggle}
+          style={style}
+        />
+      );
+    },
+    [onRemove, onToggle, todos],
+  );
   return (
-    <div className="TodoList">
-      {todos.map(todo => (
-        <TodoListitem todo={todo} key={todo.id} onRemove={onRemove}
-          onToggle={onToggle} />
-
-      ))}
-    </div>
+    <List
+      className='TodoList'
+      width={512} //전체크기
+      height={513} //전체높이
+      rowCount={todos.length} // 항목 개수
+      rowHeight={57} //항목높이
+      rowRenderer={rowRenderer} //항목을 렌더링할 때 쓰는 함수
+      list={todos}
+      style={{ outline: 'none' }}//List에 기본적용되는 outline 스타일 제거 
+    />
   );
 };
 
 export default React.memo(TodoList);
-//지금 TodoList 컴포넌트가 불필요한 리렌더링이 발생하지 않는다.
-//하지만 App컴포넌트에 다른 state 가 추가되어 해당 값들이 업데이트 될 경우를 대비해서 TodoList 컴포넌트가 불필요한 리렌더링을 할 수 있는 상황이 올 수 있다. 
-//그렇기 때문에 지금 React.memo를 사용해서 미리 최적화한다. 
-
-//* 리스트 관련 컴포넌트 작성할 때 리스트 아이템과 리스트, 이 두 가지 컴포넌트를 최적화해 주는 것을 잊지 말자 
