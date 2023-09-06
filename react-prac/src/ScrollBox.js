@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 
 class ScrollBox extends Component {
+
+  scrollToBottom = () => {
+    const { scrollHeight, clientHeight } = this.box;
+    // 앞 코드는 비구조화 할당 문법을 사용했다.
+    // 다음 의미와 같다.
+    // const scrollHeight = this.box.scrollHeight;
+    // const clientHeight = this.box.clientHeight;
+    this.box.scrollTop = scrollHeight - clientHeight;
+  }
   render() {
     const style = {
-      boder: '1px solid black',
+      border: '1px solid black',
       height: '300px',
       width: '300px',
       overflow: 'auto',
@@ -12,7 +21,7 @@ class ScrollBox extends Component {
     const innerStyle = {
       width: '100%',
       height: '650px',
-      background: 'linear-gradient(white,black)'
+      background: 'linear-gradient(white, black'
     }
     return (
       <div
@@ -23,4 +32,5 @@ class ScrollBox extends Component {
     );
   }
 }
+
 export default ScrollBox;
