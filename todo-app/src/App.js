@@ -36,7 +36,7 @@ function todoReducer(todos, action) {
 
 const App = () => {
   const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
-
+  //원래 두 번째 파라미터에 초기 상태를 넣어주는것 대신 undefined를 넣고, 세 번째 파라미터에 초기 상태를 만들어주는 함수인 createBulkTodos 를 넣었다.
   const nextId = useRef(101);
 
   const onInsert = useCallback(text => {
