@@ -19,22 +19,27 @@ class LifeCycleSample extends Component {
     }
     return null;
   }
+  //componentDidMount : 컴포넌트가 화면에 나타난 후 호출
   componentDidMount() {
     console.log('componentDidMount');
   }
+  //shouldComponentUpdate :  리렌더링 여부를 결정
   shouldComponentUpdate(nextProps, nextState) {
     console.log('shouldCoponentUpdate', nextProps, nextProps);
     //숫자의 마지막 자리가 4면 리렌더링 하지 않는다.
     return nextState.number % 10 !== 4;
   }
+  //componentWillUnmount : 컴포넌트가 화면에 사라질 때 호출
   componentWillUnmount() {
     console.log('componentWillUnmount');
   }
+  //handleClick 버튼 클릭시 state 업데이트 
   handleClick = () => {
     this.setState({
       number: this.state.number + 1
     });
   }
+  //getSnapshotBeforeUpdate : 컴포넌트 업데이트 직전에 실행 , 업데이트 직전의 상태를 기반으로 작업 수행 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     console.log('getSnapshotBeforeUpdate');
     if (prevProps.color !== this.props.color) {
@@ -42,6 +47,7 @@ class LifeCycleSample extends Component {
     }
     return null;
   }
+  //componentDidUpdate : 컴포넌트 업데이트 이후에 실행, 업데이트된 내용에 대한 처리
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log('componentDidUpdate', prevProps, prevState);
     if (snapshot) {
