@@ -3,13 +3,10 @@ import React, { useState, useEffect } from 'react';
 const Info = () => {
   const [name, setName] = useState('');
   const [nickname, SetNickname] = useState('');
+  //두 번째 파라미터로 비어있는 배열을 넣어주면 된다. 
   useEffect(() => {
-    console.log('리렌더링 될때마다 ! : 리렌더링이 완료되었습니다~');
-    console.log({
-      name,
-      nickname
-    });
-  });
+    console.log('마운드될 때만 실행됩니다.');
+  }, []);
   const onChangeName = e => {
     setName(e.target.value);
   };
