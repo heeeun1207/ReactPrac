@@ -1,8 +1,7 @@
-import Conuter from "./Conuter";
+import Information from './Information';
 
 const App = () => {
-  return <Conuter />
+  return <Information />
 }
-
 
 export default App;
