@@ -1,39 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer } from 'react';
 
-const Info = () => {
-  const [name, setName] = useState('');
-  const [nickname, SetNickname] = useState('');
-  //특정 값이 업데이트 될 때만 실행하고 싶을 때
-  //함수 뒷정리 : cleanup 함수 반환하기 
-  useEffect(() => {
-    console.log('effect');
-    return () => {
-      console.log('unmount');
-    };
-  }, []);
-  const onChangeName = e => {
-    setName(e.target.value);
+function reducer(state, action) {
+  return {
+    ...state,
+    [action.name]: action.value
+  };
+}
+const Information = () => {
+  const [state, dispatch] = useReducer(reducer, {
+    name: '',
+    nickname: ''
+  });
+  const { name, nickname } = state;
+  const onChange = e => {
+    dispatch(e.target);
   };
 
-  const onChangeNickname = e => {
-    SetNickname(e.target.value);
-  };
   return (
     <div>
       <div>
-        <input value={name} onChange={onChangeName} />
-        <input value={nickname} onChange={onChangeNickname} />
+        <input name="name" value={name} onChange={onChange} />
+        <input name="nickname" value={nickname} onChange={onChange} />
       </div>
       <div>
         <div>
-          <b>이름 :</b> {name}
+          <b>이름:</b>{name}
         </div>
         <div>
-          <b>닉네임 :</b> {nickname}
+          <b>닉네임 : </b>
+          {nickname}
         </div>
       </div>
-    </div>
-  )
-}
-
-export default Info;
+    </div >
+  );
+};
+export default Information;

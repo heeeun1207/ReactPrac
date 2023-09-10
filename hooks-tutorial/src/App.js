@@ -1,7 +1,7 @@
-import Counter from "./Conuter";
+import Information from "./Information";
 
 const App = () => {
-  return <Counter />
+  return <Information />
 }
 
 export default App;
