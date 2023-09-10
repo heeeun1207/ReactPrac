@@ -1,7 +1,7 @@
-import Information from "./Information";
+import Average from "./Average";
 
 const App = () => {
-  return <Information />
+  return <Average />
 }
 
 export default App;
