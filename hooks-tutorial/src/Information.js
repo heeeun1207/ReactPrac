@@ -7,12 +7,10 @@ const Info = () => {
   //함수 뒷정리 : cleanup 함수 반환하기 
   useEffect(() => {
     console.log('effect');
-    console.log(name);
     return () => {
-      console.log('cleanup');
-      console.log(name);
+      console.log('unmount');
     };
-  }, [name]);
+  }, []);
   const onChangeName = e => {
     setName(e.target.value);
   };
