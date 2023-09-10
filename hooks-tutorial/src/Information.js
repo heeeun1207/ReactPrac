@@ -4,9 +4,14 @@ const Info = () => {
   const [name, setName] = useState('');
   const [nickname, SetNickname] = useState('');
   //특정 값이 업데이트 될 때만 실행하고 싶을 때
-  //두 번째 파라미터로 전달되는 배열안에 검사하고 싶은 값을 넣어준다 
+  //함수 뒷정리 : cleanup 함수 반환하기 
   useEffect(() => {
+    console.log('effect');
     console.log(name);
+    return () => {
+      console.log('cleanup');
+      console.log(name);
+    };
   }, [name]);
   const onChangeName = e => {
     setName(e.target.value);
