@@ -3,10 +3,11 @@ import React, { useState, useEffect } from 'react';
 const Info = () => {
   const [name, setName] = useState('');
   const [nickname, SetNickname] = useState('');
-  //두 번째 파라미터로 비어있는 배열을 넣어주면 된다. 
+  //특정 값이 업데이트 될 때만 실행하고 싶을 때
+  //두 번째 파라미터로 전달되는 배열안에 검사하고 싶은 값을 넣어준다 
   useEffect(() => {
-    console.log('마운드될 때만 실행됩니다.');
-  }, []);
+    console.log(name);
+  }, [name]);
   const onChangeName = e => {
     setName(e.target.value);
   };
