@@ -10,6 +10,10 @@ const getAverage = numbers => {
 const Average = () => {
   const [list, setList] = useState([]);
   const [number, setNumber] = useState('');
+
+
+  // inputEl이라는 Ref 객체를 생성한다.
+  // 이 Ref 객체는 current 속성을 가지고 있으며, 초기값은 null이다.
   const inputEI = useRef(null);
 
   const onChange = useCallback(e => {
@@ -19,14 +23,16 @@ const Average = () => {
     const nextList = list.concat(parseInt(number));
     setList(nextList);
     setNumber('');
+
     inputEI.current.focus();
   }, [number, list]);
-
+  // inputEl.current를 사용하여 실제 DOM 엘리먼트에 포커스를 설정한다.
   const avg = useMemo(() => getAverage(list), [list]);
 
 
   return (
     <div>
+      {/* ref 속성을 사용하여 inputEl Ref를 input 엘리먼트에 연결. 이제 inputEl.current를 통해 실제 input 엘리먼트에 접근할 수 있다. */}
       <input value={number} onChange={onChange}
         ref={inputEI}
       />
