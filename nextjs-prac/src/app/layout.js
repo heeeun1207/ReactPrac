@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useState,useEffect } from 'react';
 import './globals.css'
-import { Result } from 'postcss';
+
 
 //server component
 
@@ -15,7 +15,7 @@ import { Result } from 'postcss';
 export default function RootLayout({ children }) {
   const [topics, setTopics] = useState([]);
   useEffect(()=>{
-    fetch('http//localhost:9999/topics')
+    fetch('http://localhost:9999/topics')
       .then(resp=>resp.json())
       .then(result=>{
         setTopics(result);
@@ -26,8 +26,9 @@ export default function RootLayout({ children }) {
       <body>
         <h1><a href='/'>WEB</a></h1>
         <ol>
-          <li><a href='/read/1'>html</a></li>
-          <li><a href='/read/2'>css</a></li>
+          {topics.map((topic)=>{
+            return <li key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
+          })}
         </ol>
         {children}
         <ul>
