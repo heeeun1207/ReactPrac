@@ -14,7 +14,7 @@ const DECREASE = 'DECREASE';
 // 액션 생성 함수 정의
 const toggleSwitch = () => ({ type: TOGGLE_SWITCH });
 const increase = difference => ({ type: INCREASE, difference });
-const decrease = () => ({ type: DECREASE });
+const decrease = difference => ({ type: DECREASE, difference });
 
 // 초기 상태 정의
 const initialSate = {
@@ -38,7 +38,7 @@ function reducer(state = initialSate, action) {
     case DECREASE:
       return {
         ...state,
-        counter: state.counter - 1
+        counter: state.counter - action.difference
       };
     default:
       return state;
@@ -75,9 +75,9 @@ divToggle.addEventListener('click', () => {
 });
 
 btnIncrease.addEventListener('click', () => {
-  store.dispatch(increase(1));
+  store.dispatch(increase(2));
 });
 
 btnDecrease.addEventListener('click', () => {
-  store.dispatch(decrease());
+  store.dispatch(decrease(2));
 });
