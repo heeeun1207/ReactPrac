@@ -126,7 +126,24 @@ var TOGGLE_SWITCH = 'TOGGLE_SWITCH';
 var INCREASE = 'INCREASE';
 var DECREASE = 'DECREASE';
 //액션이름은 문자열 형태로한다.
-//주로 대문자로 작성한며, 또한 액션 이름은 고유해야 한다.
+//주로 대문자로 작성한며, 또한 액션 이름은 고유해야 한다. 
+
+var toggleSwitch = function toggleSwitch() {
+  return {
+    type: TOGGLE_SWITCH
+  };
+};
+var increase = function increase(difference) {
+  return {
+    type: INCREASE,
+    difference: difference
+  };
+};
+var decrease = function decrease() {
+  return {
+    type: DECREASE
+  };
+};
 },{}],"../../../../.config/yarn/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
