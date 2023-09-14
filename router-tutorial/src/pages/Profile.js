@@ -9,7 +9,7 @@ import {useParams} from 'react-router-dom';
 const data = {
   velopert:{
     name: '정희은',
-    description: '리액트와 친해지는중인 개발자'
+    description: '리액트와 친해지는중인 개발자',
   },
   gildong:{
     name:'홍길동',
