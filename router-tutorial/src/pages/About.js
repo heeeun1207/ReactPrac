@@ -1,26 +1,33 @@
-//* 쿼리스트링
-// useLocation : 이 훅은 객체를 반환한다. 객체는 현재 사용자가 보고있는 페이지 정보를 지닌다.
-
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const About = () => {
-  const location = useLocation();
+//http://localhost:3000/about?mode=39&detail=true
+//useSearchParams URL문자열 파라미터를 객체형태로 가져오며, 
+//이 객체에서 .get('') 메서드를 사용하여 특정 파라미터값을 가져온다 
+  const [searchParams, setSearchParams] = useSearchParams();
+  const detail = searchParams.get('detail');
+  const mode = searchParams.get('mode');
+
+  const onToggleDetail = () => {
+    setSearchParams({mode, detail: detail !== 'true' });
+  };
+
+  const onIncreaseMode = () =>{
+    const nextMode= mode === null ? 1 : Number(mode) + 1 ;
+    //parseInt()와 Number() 
+    setSearchParams({mode: nextMode,detail});
+  };
 
   return (
     <div>
-      <h1>소개 페이지</h1>
-      <p>리액트 라우터 사용하고 있는중!</p>
-      {/* .search 맨앞의 ? 문자를 포함한 쿼리스트링 값  */}
-      <p>쿼리스트링 : {location.search}</p>
-      {/* http://localhost:3000/about?detail=true&mode=1
-      보통 문자열 앞에 ? 를 지우고 & 문자열로 분리한 뒤 key와 value 를 파싱하는 작업을 한다. 
-      npm 에서 qs 또는 querysrting 패키지를 설치하면 된다. 
-      */}
-      {/* useSearchParam 의 Hook을 통해 쿼리스트링을 쉽게 다룰 수 있다. */}
+      <h1>소개</h1>
+      <p>리액트 라우터 사용해 보는중</p>
+      <p>detail: {detail}</p>
+      <p>mode:{mode}</p>
+      <button onClick={onToggleDetail}>Toggle detail</button>
+      <button onClick={onIncreaseMode}>mode + 1 </button>
     </div>
   );
 };
 
 export default About;
-
-
