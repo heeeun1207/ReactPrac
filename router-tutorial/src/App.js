@@ -11,8 +11,12 @@ function App() {
       <Route path="/" element={<Home />}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/profiles/:username" element={<Profile />}/>
-      <Route path="/articles" element={<Articles />}/>
-      <Route path="/articles/:id" element={<Article />}/>
+
+      {/* /articles 경로에 Articles 컴포넌트 내용인 목록페이지 렌더링 */}
+      <Route path="/articles" element={<Articles />}>
+        {/* /articles/1 게시글을 들어가면  Article 컴포넌트의 <h2>태그와 articles목록이 같이 렌더링  */}
+        <Route path=":id" element={<Article />}/>
+        </Route>
     </Routes>
   );
 }
