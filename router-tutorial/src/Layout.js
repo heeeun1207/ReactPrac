@@ -10,7 +10,9 @@ const Layout = () => {
   
   const goArticles = () => {
     // articles 게시판목록으로 이동 
-    navigate('/articles');
+    navigate('/articles', {replace : true});
+    // replace 옵션 => 페이지를 이동할 때 현재 페이지를 페이지 기록에 남기지 않는다.
+    //
   };
 
   return (
