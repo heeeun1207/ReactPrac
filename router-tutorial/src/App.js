@@ -10,7 +10,8 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-      <Route path="/" element={<Home />}/>
+      {/* index  = path="/" 동일한 역할을 하며, 이를 좀 더 명시적으로 표현하는 방법 */}
+      <Route index element={<Home />}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/profiles/:username" element={<Profile />}/>
       </Route>
