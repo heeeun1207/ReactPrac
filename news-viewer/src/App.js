@@ -6,7 +6,7 @@ const App =() =>{
   // async 적용해보기 
   const onClick = async () => {
     try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1',
+      const response = await axios.get('https://newsapi.org/v2/top-headlines?country=kr&apiKey=API_KEY',
       );
       setData(response.data);
     } catch (e){
