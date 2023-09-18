@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 
 const categories = [
 {
@@ -54,16 +54,34 @@ const Category = styled.div`
     color: #495057;
   }
 
+  //* 1. Categories 에서 props로 전달받은 onSelect를 Category의 onClick으로 설정
+  //* 2. 선택된 카테고리 값에 따라 다른 스타일을 적용한다.
+  ${props =>
+    props.active && css`
+      font-weight: 600;
+      border-radius: 2px solid #22b8cf;
+      color : #22b8cf;
+      &:hover {
+        color : #3bc9db;
+      }
+    `}
+
   & + & {
     margin-left: 1rem;
   }
 `;
 
-const Categories = () => {
+const Categories = ({onSelect, category}) => {
   return (
     <CategoriesBlock>
       {categories.map(c => (
-        <Category key={c.name}>{c.text}</Category>
+        <Category 
+        key={c.name}
+        active={category === c.name}
+        onClick={()=> onSelect(c.name)}
+        >
+            {c.text}
+          </Category>
       ))}
     </CategoriesBlock>
   );
