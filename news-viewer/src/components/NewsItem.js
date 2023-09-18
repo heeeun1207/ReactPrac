@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const NewsItemBlock = styled.div`
   display: flex;
-  .tumbnail {
+  .thumbnail {
     margin-right: 1rem;
     img{
       display: block;
