@@ -1,19 +1,15 @@
-//* 1. category 상태 관리하기 useState 
-//* 2. category 값을 업데이트할 onSelect 함수 만들기 
-import { useState, useCallback } from "react";
-import NeswList from "./components/NewsList";
-import Categories from "./components/Categories";
+import { Route, Routes } from "react-router-dom";
+import NewsPage from "./pages/NewsPage";
+
 
 const App = () =>{
-  const [category, setCategory] = useState('all');
-  const onSelect = useCallback (category => setCategory(category), []);
-
-  return (
-    <>
-      <Categories category={category} onSelect={onSelect} />
-      <NeswList category={category}/>
-    </>
-  )
+  return(
+    <Routes>
+      {/* 카테고리 URL 파라미터가 없어도 보여줘야하고, 카테고리가 있어도 보여줘야  하므로 컴포넌트를 두 번 사용한다   */}
+      <Route path="/" element={<NewsPage />} />
+      <Route path="/:category" element={<NewsPage />} />
+    </Routes>
+  );
 };
 
 export default App;

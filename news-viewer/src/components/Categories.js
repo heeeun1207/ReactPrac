@@ -1,4 +1,6 @@
-import styled,{css} from "styled-components";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+
 
 const categories = [
 {
@@ -42,7 +44,7 @@ const CategoriesBlock = styled.div`
   }
 `;
 
-const Category = styled.div`
+const Category = styled(NavLink)`
   font-size: 1.125rem;
   cursor: pointer;
   white-space: pre;
@@ -54,17 +56,14 @@ const Category = styled.div`
     color: #495057;
   }
 
-  //* 1. Categories 에서 props로 전달받은 onSelect를 Category의 onClick으로 설정
-  //* 2. 선택된 카테고리 값에 따라 다른 스타일을 적용한다.
-  ${props =>
-    props.active && css`
-      font-weight: 600;
-      border-radius: 2px solid #22b8cf;
-      color : #22b8cf;
-      &:hover {
-        color : #3bc9db;
-      }
-    `}
+  &:active {
+    font-weight: 600;
+    border-radius: 2px solid #22b8cf;
+    color : #22b8cf;
+    &:hover{
+      color:#3bc9db;
+    }
+  }
 
   & + & {
     margin-left: 1rem;
@@ -77,9 +76,11 @@ const Categories = ({onSelect, category}) => {
       {categories.map(c => (
         <Category 
         key={c.name}
-        active={category === c.name}
-        onClick={()=> onSelect(c.name)}
+        className={({ isActive }) => (isActive ? 'active' : undefined )}
+        to={c.name === 'all' ? '/' : `/${c.name}`}
         >
+        {/* Categories 컴포넌트에 to 값은 '/컴포넌트이름' 으로 설정하고, 
+        전체보기는 예외로 /all 대신에 '/'로 설정했다  */}
             {c.text}
           </Category>
       ))}
