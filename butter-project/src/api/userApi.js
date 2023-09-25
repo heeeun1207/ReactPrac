@@ -18,7 +18,7 @@ export const signUp = async (userData) => {
       const data = await response.json();
       return data;
     } else {
-      throw new Error('회원 가입에 실패했습니다.');
+      throw new Error(`회원 가입에 실패했습니다. 응답 상태 코드: ${response.status}`);
     }
   } catch (error) {
     throw new Error(`API 호출 오류: ${error.message}`);
