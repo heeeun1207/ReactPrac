@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { signUp } from '../api/userApi';
+import xboxImage from '../assets/images/xbox.png';
 import './SignUpComponent.css'; // SignUpComponent.css 파일을 import
 
 class SignUpComponent extends Component {
@@ -72,6 +73,12 @@ class SignUpComponent extends Component {
   render() {
     return (
       <div className="login-popup"> 
+        <img
+        src={xboxImage}
+        alt="닫기"
+        className="close-button"
+        onClick={this.handleClosePopup}
+        />
         <h2 className="login-title">회원 가입</h2> 
         <div className="input-container"> 
           <label htmlFor="userId">사용자 아이디:</label>
