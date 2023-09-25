@@ -4,8 +4,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(45, 45, 45, 1);
-  width: 659px;
-  height: 378px;
   padding: 20px;
   text-align: center;
 }

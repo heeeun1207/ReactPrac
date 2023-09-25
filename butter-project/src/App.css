@@ -8,6 +8,7 @@
   object-fit: cover;
 }
 
+
 /* 로그인 버튼 스타일 */
 .login-button {
   position: absolute;
@@ -49,3 +50,4 @@
   margin-top: 60px;
   margin-left: 41px;
 }
+

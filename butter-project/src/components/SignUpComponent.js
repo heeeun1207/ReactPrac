@@ -72,7 +72,7 @@ class SignUpComponent extends Component {
 
   render() {
     return (
-      <div className="login-popup"> 
+      <div className="singup-popup"> 
         <img
         src={xboxImage}
         alt="닫기"
