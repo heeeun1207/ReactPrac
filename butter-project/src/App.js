@@ -7,6 +7,9 @@ import image4 from './assets/images/image4.png';
 import LoginPopup from './components/LoginPopup';
 import HamburgerIcon from './assets/images/Hamburger.png';
 
+// signUp 함수를 import
+import { signUp } from './api/userApi';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +41,24 @@ class App extends Component {
     }));
   };
 
+  handleSignUpClick = async () => {
+    // 회원 가입 로직 구현
+    try {
+      const userData = {
+        userId: '사용자 아이디', // 사용자 아이디 입력
+        password: '비밀번호', // 비밀번호 입력
+        userName: '사용자 이름', // 사용자 이름 입력
+        email: '이메일 주소', // 이메일 주소 입력
+        mobile: '휴대폰 번호', // 휴대폰 번호 입력
+      };
+      const response = await signUp(userData); 
+      console.log('회원 가입 성공:', response);
+      // 회원 가입 성공 시 필요한 동작 수행
+    } catch (error) {
+      console.error('회원 가입 오류:', error.message);
+      // 회원 가입 실패 시 에러 처리
+    }
+  };
   render() {
     const { currentImageIndex, images, isLoggedIn } = this.state;
     const currentImage = images[currentImageIndex];
@@ -70,7 +91,19 @@ class App extends Component {
           RESERVATION
         </h2>
 
+        {/* 회원 가입 버튼 */}
+        {!isLoggedIn && (
+          <button
+            onClick={this.handleSignUpClick} // 회원 가입 버튼 클릭 이벤트 핸들러 추가
+            className="signup-button"
+          >
+            Sign up
+          </button>
+        )}
+
+        {/* 로그인 팝업 */}
         {isLoggedIn && <LoginPopup />}
+
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import { BASE_URL } from './config'; // API 서버의 기본 URL
+import { BASE_URL } from '../utils/config'
 import { getToken } from './auth'; // JWT 토큰 관리 함수
 
 // 회원 가입 API 호출
