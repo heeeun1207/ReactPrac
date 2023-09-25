@@ -35,6 +35,11 @@ class LoginPopup extends Component {
           <h3 className="login-title">Login</h3>
           <input type="text" placeholder="Username" className="input-field" />
           <input type="password" placeholder="Password" className="input-field" />
+          <div className="sign-in-up">
+            <span>Sign in</span>
+            <span className="separator">|</span>
+            <span>Sign up</span>
+          </div>
         </div>
         {/* 
           로그인 양식과 관련된 로직
