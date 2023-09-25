@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { signUp } from '../api/userApi';
 import xboxImage from '../assets/images/xbox.png';
-import './SignUpComponent.css'; // SignUpComponent.css 파일을 import
+import './SignUpComponent.css';
 
 class SignUpComponent extends Component {
   constructor(props) {
@@ -79,71 +79,69 @@ class SignUpComponent extends Component {
         className="close-button"
         onClick={this.handleClosePopup}
         />
-        <h2 className="login-title">회원 가입</h2> 
+        <h2 className="sign-title">Sign up</h2> 
         <div className="input-container"> 
-          <label htmlFor="userId">사용자 아이디:</label>
+          <label htmlFor="userId" className="label">ID</label>
           <input
             type="text"
             id="userId"
             value={this.state.userId}
             onChange={this.handleUserIdChange}
-            className="input-field" 
+            className="sign-field" 
           />
         </div>
         <div className="input-container"> 
-          <label htmlFor="password">비밀번호:</label>
+          <label htmlFor="password" className="label">Password</label>
           <input
             type="password"
             id="password"
             value={this.state.password}
             onChange={this.handlePasswordChange}
-            className="input-field" 
+            className="sign-field" 
           />
         </div>
         <div className="input-container"> 
-          <label htmlFor="Re-Enter">비밀번호 확인:</label>
+          <label htmlFor="Re-Enter" className="label">Re-Enter</label>
           <input
             type="password"
             id="Re-Enter"
             value={this.state['Re-Enter']}
             onChange={this.handleConfirmPasswordChange}
-            className="input-field" 
+            className="sign-field" 
           />
         </div>
         <div className="input-container"> 
-          <label htmlFor="userName">사용자 이름:</label>
+          <label htmlFor="userName" className="label">Name</label>
           <input
             type="text"
             id="userName"
             value={this.state.userName}
             onChange={this.handleUserNameChange}
-            className="input-field" 
+            className="sign-field" 
           />
         </div>
         <div className="input-container"> 
-          <label htmlFor="email">이메일:</label>
+          <label htmlFor="email" className="label">E-mail</label>
           <input
             type="email"
             id="email"
             value={this.state.email}
             onChange={this.handleEmailChange}
-            className="input-field" 
+            className="sign-field" 
           />
         </div>
         <div className="input-container"> 
-          <label htmlFor="mobile">휴대폰 번호:</label>
+          <label htmlFor="mobile" className="label">Mobile</label>
           <input
             type="tel"
             id="mobile"
             value={this.state.mobile}
             onChange={this.handleMobileChange}
-            className="input-field" 
+            className="sign-field" 
           />
         </div>
         <div className="sign-in-up"> 
-          <span>Sign in</span>
-          <span className="separator">|</span>
-          <span onClick={this.handleSignUp}>Sign up</span>
+          <button className="join-button" onClick={this.handleSignUp}>Join Us</button>
         </div>
       </div>
     );

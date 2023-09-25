@@ -42,10 +42,10 @@ class LoginPopup extends Component {
           onClick={this.handleClosePopup}
         />
     
-        <div className="input-container">
-          <h3 className="login-title">로그인</h3>
-          <input type="text" placeholder="사용자 이름" className="input-field" />
-          <input type="password" placeholder="비밀번호" className="input-field" />
+        <div className="sign-container">
+          <h3 className="login-title">Login</h3>
+          <input type="text" placeholder="ID" className="input-field" />
+          <input type="password" placeholder="Password" className="input-field" />
           <div className="sign-in-up">
             <span>Sign in</span>
             <span className="separator">|</span>

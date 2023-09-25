@@ -6,6 +6,10 @@
   background: rgba(45, 45, 45, 1);
   padding: 20px;
   text-align: center;
+  flex-direction: column;
+  align-items: center; 
+  width: 400px;
+
 }
 
 .close-button {
@@ -19,21 +23,31 @@
 
 .input-container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
+  margin: 0.1rem;
+}
+
+.label {
+  flex-basis: 30%; 
+  text-align: right; 
+  color: white;
+  margin-right: 60px; 
+}
+
+.sign-field {
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.login-title {
-  color: white;
-  margin-bottom: 20px;
-}
-
-.input-field {
-  width: 260px;
+  width: 160px;
   height: 20px;
-  margin: 4px;
   padding: 10px;
+  border-radius: 8px; 
+}
+
+.sign-title {
+  color: white;
+  margin-bottom: 2rem;
 }
 
 .sign-in-up {
@@ -46,4 +60,19 @@
 
 .separator {
   margin: 0 10px;
+}
+
+.join-button {
+  background-color: rgba(116, 119, 140, 1); 
+  color: white; 
+  padding: 10px 20px; 
+  border: none; 
+  cursor: pointer;
+  border-radius: 5px; 
+  margin-top: 1.2rem;
+}
+
+
+.join-button:hover {
+  background-color: rgba(96, 99, 120, 1);
 }

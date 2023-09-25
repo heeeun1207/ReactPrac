@@ -6,6 +6,7 @@
   background: rgba(45, 45, 45, 1);
   padding: 20px;
   text-align: center;
+  width: 200px;
 }
 
 .close-button {
@@ -17,7 +18,7 @@
   height: 20px;
 }
 
-.input-container {
+.sign-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,10 +31,13 @@
 }
 
 .input-field {
-  width: 458px;
-  height: 71px;
-  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 20px;
   padding: 10px;
+  border-radius: 8px; 
 }
 
 .sign-in-up {
