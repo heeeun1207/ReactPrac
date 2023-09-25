@@ -1,1 +1,11 @@
-// JWT 관리 및 인증 관련 코드
+let authToken = null; // 토큰을 저장할 변수
+
+// 토큰 저장 함수
+export const saveToken = (token) => {
+  authToken = token;
+};
+
+// 토큰 가져오기 함수
+export const getToken = () => {
+  return authToken;
+};
