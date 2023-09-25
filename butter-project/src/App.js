@@ -47,63 +47,24 @@ class App extends Component {
         <img
           src={currentImage}
           alt={`car ${currentImageIndex + 1}`}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-          }}
+          className="background-image" 
         />
 
         <button
           onClick={this.toggleLogin}
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            marginTop: '60px',
-            marginRight: '41px',
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-          }}
+          className="login-button" 
         >
           <img
             src={HamburgerIcon}
             alt="Hamburger"
-            style={{ width: '54px', height: '37px' }}
+            className="hamburger-icon" 
           />
         </button>
 
-        <h1
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 1,
-            color: 'white',
-            marginTop: '44px',
-            marginLeft: '-100px',
-            fontSize: '72px',
-          }}
-        >
-          BUTTER
-        </h1>
+        <h1 className="app-title">BUTTER</h1>
 
         <h2
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            zIndex: 1,
-            color: 'white',
-            cursor: 'pointer',
-            marginTop: '60px',
-            marginLeft: '41px',
-          }}
+          className="reservation"
           onClick={this.toggleLogin}
         >
           RESERVATION

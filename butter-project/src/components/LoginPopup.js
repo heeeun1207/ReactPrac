@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import xboxImage from '../assets/images/xbox.png';
+import './LoginPopup.css'; 
 
 class LoginPopup extends Component {
   constructor(props) {
@@ -22,17 +23,18 @@ class LoginPopup extends Component {
     }
 
     return (
-      <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'rgba(45, 45, 45, 1)', width: '659px', height: '378px', padding: '20px', textAlign: 'center' }}>
+      <div className="login-popup">
         <img
           src={xboxImage}
           alt="Close"
-          style={{ position: 'absolute', top: '10px', right: '10px', cursor: 'pointer', width: '20px', height: '20px' }}
-          onClick={this.handleClosePopup} // 닫기 버튼을 클릭하면 팝업을 닫도록 처리합니다.
+          className="close-button"
+          onClick={this.handleClosePopup}
         />
-        <h3 style={{ color: 'white' }}>Login</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <input type="text" placeholder="Username" style={{ width: '458px', height: '71px', margin: '10px', padding: '10px' }} />
-          <input type="password" placeholder="Password" style={{ width: '458px', height: '71px', margin: '10px', padding: '10px' }} />
+    
+        <div className="input-container">
+          <h3 className="login-title">Login</h3>
+          <input type="text" placeholder="Username" className="input-field" />
+          <input type="password" placeholder="Password" className="input-field" />
         </div>
         {/* 
           로그인 양식과 관련된 로직
