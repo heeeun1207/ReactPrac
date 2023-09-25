@@ -98,8 +98,10 @@ class App extends Component {
           {isLoggedIn && <LoginPopup />}
 
           <Routes>
+            <Route path="/" element={<div>Home</div>} /> 
             <Route path="/subpage" element={<SubPage />} />
           </Routes>
+
         </div>
       </Router>
     );
