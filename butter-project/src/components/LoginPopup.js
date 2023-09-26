@@ -21,16 +21,16 @@ class LoginPopup extends Component {
     this.setState({ showSignUp: true });
   }
 
+  // 회원 가입 팝업을 닫기 위한 함수
+  closeSignUpPopup = () => {
+    this.setState({ showSignUp: false });
+  }
+
   render() {
     const { isOpen, showSignUp } = this.state;
 
-
     if (!isOpen) {
       return null;
-    }
-
-    if (showSignUp) {
-      return <SignUpComponent />;
     }
 
     return (
@@ -52,7 +52,10 @@ class LoginPopup extends Component {
             <span onClick={this.handleSignUpClick}>Sign up</span>
           </div>
         </div>
-        {/* 로그인 양식과 관련된 로직 */}
+        
+        {showSignUp && (
+          <SignUpComponent onClose={this.closeSignUpPopup} />
+        )}
       </div>
     );
   }

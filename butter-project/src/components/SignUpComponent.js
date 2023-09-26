@@ -17,7 +17,11 @@ class SignUpComponent extends Component {
       mobile: '',
     };
   }
-
+  // 팝업창 닫기
+  handleClosePopup = () => {
+    this.props.onClose(); // X를 누를 때 부모 컴포넌트에서 전달한 콜백 함수 호출
+  };
+  
   // 각 입력 필드에 대한 핸들러 메서드
   handleUserIdChange = (event) => {
     this.setState({ userId: event.target.value });
