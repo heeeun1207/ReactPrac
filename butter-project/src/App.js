@@ -97,6 +97,9 @@ class App extends Component {
 
           {isLoggedIn && <LoginPopup />}
 
+          <div className="centered-text">
+            For the high-end
+          </div>
           <Routes>
             <Route path="/" element={<div>Home</div>} /> 
             <Route path="/subpage" element={<SubPage />} />
