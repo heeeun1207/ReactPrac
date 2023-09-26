@@ -51,22 +51,50 @@ body {
 }
 
 .title {
+  top: 30%;
+  left: 4%;
+  position: absolute;
   color: white;
   font-size: 100px; 
   font-family: 'Pretendard';
+  z-index: 999;
+  
+}
+.title2{
+  top : 44%;
+  left: 4%;
+  position: absolute;
+  color: white;
+  font-size: 100px; 
+  font-family: 'Pretendard';
+  z-index: 999;
 }
 
 .contents{
-  color: white;
+  top: 62%;
+  left: 4%;
+  position: absolute;
+  color: rgba(111, 115, 124, 1);
   font-size: 28px; 
   font-family: 'Pretendard';
+}
+.contents2{
+  top: 66%;
+  left: 4%;
+  position: absolute;
+  color: rgba(111, 115, 124, 1);
+  font-size: 28px; 
+  font-family: 'Pretendard';
+  z-index: 999;
 }
 
 /* "VIEW MORE" 링크 스타일링 */
 .view-more {
-  color: white;
+  position: absolute;
+  color: rgba(111, 115, 124, 1);
   text-decoration: underline;
-  margin-left: 10px; /* 링크와 다른 아이템 간의 간격 조절 */
-  font-size: 24px; /* 원하는 글자 크기 */
-  font-family: 'Pretendard'; /* 원하는 글꼴 설정 */
+  bottom: 4rem; 
+  left: 8rem; 
+  font-size: 24px; 
+  font-family: 'Pretendard'; 
 }

@@ -14,8 +14,10 @@ function SubPage() {
   return (
     <div className="subpage-container">
       <div className="header">
-        <div className="title">HIGH-END CAR STORE</div>
-        <div className="contents">하이엔드 직수입, 구매부터 튜닝까지 고객의 요구에 맞춘 최상의 서비스를 제공합니다.</div>
+        <div className="title">HIGH-END CAR</div>
+        <div className='title2'>STORE</div>
+        <div className="contents">하이엔드 직수입, 구매부터 튜닝까지</div>
+        <div className='contents2'>고객의 요구에 맞춘 최상의 서비스를 제공합니다.</div>
       </div>
       {["High-end Car", "MAINTENANCE", "TUNING CAR", "BODY PAINT"].map((item, index) => (
         <div
