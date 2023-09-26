@@ -4,11 +4,11 @@ import image1 from './assets/images/image1.png';
 import image2 from './assets/images/image2.png';
 import image3 from './assets/images/image3.png';
 import image4 from './assets/images/image4.png';
-import LoginPopup from './components/LoginPopup';
-import HamburgerIcon from './assets/images/Hamburger.png';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SubPage from './components/SubPage';
 import { signUp } from './api/userApi';
+import Home from './components/Home';
+
 
 class App extends Component {
   constructor(props) {
@@ -59,52 +59,21 @@ class App extends Component {
 
   render() {
     const { currentImageIndex, images, isLoggedIn } = this.state;
-    const currentImage = images[currentImageIndex];
 
     return (
       <Router>
         <div className="App" style={{ position: 'relative' }}>
-          <img
-            src={currentImage}
-            alt={`car ${currentImageIndex + 1}`}
-            className="background-image"
+          <Home
+            currentImageIndex={currentImageIndex}
+            images={images}
+            isLoggedIn={isLoggedIn}
+            toggleLogin={this.toggleLogin}
+            handleSignUpClick={this.handleSignUpClick}
           />
 
-          <Link to="/subpage">
-            <button className="login-button">
-              <img
-                src={HamburgerIcon}
-                alt="Hamburger"
-                className="hamburger-icon"
-              />
-            </button>
-          </Link>
-
-          <h1 className="app-title">BUTTER</h1>
-
-          <h2 className="reservation" onClick={this.toggleLogin}>
-            RESERVATION
-          </h2>
-
-          {!isLoggedIn && (
-            <button
-              onClick={this.handleSignUpClick}
-              className="signup-button"
-            >
-              Sign up
-            </button>
-          )}
-
-          {isLoggedIn && <LoginPopup />}
-
-          <div className="centered-text">
-            For the high-end
-          </div>
           <Routes>
-            <Route path="/" element={<div>Home</div>} /> 
-            <Route path="/subpage" element={<SubPage />} />
+            <Route path="/subpage" element={<SubPage />} /> 
           </Routes>
-
         </div>
       </Router>
     );
