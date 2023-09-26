@@ -61,3 +61,12 @@ body {
   font-size: 28px; 
   font-family: 'Pretendard';
 }
+
+/* "VIEW MORE" 링크 스타일링 */
+.view-more {
+  color: white;
+  text-decoration: underline;
+  margin-left: 10px; /* 링크와 다른 아이템 간의 간격 조절 */
+  font-size: 24px; /* 원하는 글자 크기 */
+  font-family: 'Pretendard'; /* 원하는 글꼴 설정 */
+}
