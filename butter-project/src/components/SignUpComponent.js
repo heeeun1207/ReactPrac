@@ -21,7 +21,7 @@ class SignUpComponent extends Component {
   handleClosePopup = () => {
     this.props.onClose(); // X를 누를 때 부모 컴포넌트에서 전달한 콜백 함수 호출
   };
-  
+
   // 각 입력 필드에 대한 핸들러 메서드
   handleUserIdChange = (event) => {
     this.setState({ userId: event.target.value });
@@ -68,6 +68,7 @@ class SignUpComponent extends Component {
       const response = await signUp(userData);
       console.log('회원 가입 성공:', response);
       // 회원 가입 성공 시 필요한 동작 수행
+      this.handleClosePopup(); // 회원가입 성공 후 팝업 닫기
     } catch (error) {
       console.error('회원 가입 오류:', error.message);
       // 회원 가입 실패 시 에러 처리
