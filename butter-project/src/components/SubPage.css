@@ -12,8 +12,7 @@ body {
 }
 
 .subpage-item {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 4rem;
   color: rgba(111, 115, 124, 1);
   cursor: pointer;
   text-decoration: none; 
@@ -33,4 +32,14 @@ body {
 /* 클릭한 아이템의 글자 색상을 흰색으로 설정 */
 .subpage-item.selected {
   color: white; 
+}
+
+.image5 {
+  margin-right: 6rem;
+  margin-bottom: 6rem;
+  width: 60%; 
+  height: 60%; 
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
 }
