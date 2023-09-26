@@ -26,6 +26,11 @@ class LoginPopup extends Component {
     this.setState({ showSignUp: false });
   }
 
+  // 로그인 팝업을 닫는 함수
+  closeLoginPopup = () => {
+    this.setState({ isOpen: false });
+  }
+
   render() {
     const { isOpen, showSignUp } = this.state;
 
@@ -47,7 +52,7 @@ class LoginPopup extends Component {
           <input type="text" placeholder="ID" className="input-field" />
           <input type="password" placeholder="Password" className="input-field" />
           <div className="sign-in-up">
-            <span>Sign in</span>
+            <span onClick={this.closeLoginPopup}>Sign in</span>
             <span className="separator">|</span>
             <span onClick={this.handleSignUpClick}>Sign up</span>
           </div>
