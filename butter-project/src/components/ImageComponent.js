@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import SubPage from './SubPage';
-import LoginPopup from './LoginPopup';
 import { signUp } from '../api/userApi';
-import './Main.css';
-import HamburgerIcon from '../assets/images/Hamburger.png';
 
-class Main extends Component {
+class ImageComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -60,43 +55,17 @@ class Main extends Component {
   };
 
   render() {
-    const { currentImageIndex, images, isLoggedIn } = this.state;
+    const { currentImageIndex, images } = this.state;
     const currentImage = images[currentImageIndex];
 
     return (
-      <Router>
-        <div className="App" style={{ position: 'relative' }}>
-          <img src={currentImage} alt={`car ${currentImageIndex + 1}`} className="background-image" />
+      <div className="App" style={{ position: 'relative' }}>
+        <img src={currentImage} alt={`car ${currentImageIndex + 1}`} className="background-image" />
 
-          <Link to="/subpage">
-            <button className="login-button">
-              <img src={HamburgerIcon} alt="Hamburger" className="hamburger-icon" />
-            </button>
-          </Link>
-
-          <h1 className="app-title">BUTTER</h1>
-
-          <h2 className="reservation" onClick={this.toggleLogin}>
-            RESERVATION
-          </h2>
-
-          {!isLoggedIn && (
-            <button onClick={this.handleSignUpClick} className="signup-button">
-              Sign up
-            </button>
-          )}
-
-          {isLoggedIn && <LoginPopup />}
-
-          <div className="centered-text">For the high-end</div>
-        </div>
-
-        <Routes>
-          <Route path="/subpage" element={<SubPage />} />
-        </Routes>
-      </Router>
+        {/* 예: 로그인 토글 버튼, 회원 가입 버튼 등 */}
+      </div>
     );
   }
 }
 
-export default Main;
+export default ImageComponent;

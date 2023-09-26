@@ -1,17 +1,16 @@
 import React from 'react';
-import Main
-from './components/Main';
+import MainPage from './components/MainPage';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import SubPage from './components/SubPage';
-import Home from './components/Home';
+import HomeContent from './components/HomeContent';
 
 
 function App() {
   return (
     <BrowserRouter> 
       <Routes>
-      <Route path="/" element={<Home />} />
-        <Route path="/main" element={<Main />} />
+      <Route path="/" element={<HomeContent />} />
+        <Route path="/main" element={<MainPage />} />
         <Route path="/subpage" element={<SubPage />} />
       </Routes>
     </BrowserRouter>

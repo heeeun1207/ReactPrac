@@ -3,36 +3,16 @@ import { Link } from 'react-router-dom';
 import LoginPopup from './LoginPopup';
 import { signUp } from '../api/userApi';
 import HamburgerIcon from '../assets/images/Hamburger.png';
+import ImageComponent from './ImageComponent'; 
 
-class Home extends Component {
+class HomeContent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentImageIndex: 0,
-      images: [
-        require('../assets/images/image1.png'),
-        require('../assets/images/image2.png'),
-        require('../assets/images/image3.png'),
-        require('../assets/images/image4.png'),
-      ],
       isLoggedIn: false,
     };
   }
-
-  componentDidMount() {
-    this.interval = setInterval(this.changeImage, 3000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  changeImage = () => {
-    this.setState((prevState) => ({
-      currentImageIndex: (prevState.currentImageIndex + 1) % this.state.images.length,
-    }));
-  };
 
   toggleLogin = () => {
     this.setState((prevState) => ({
@@ -49,7 +29,7 @@ class Home extends Component {
         email: '이메일 주소',
         mobile: '휴대폰 번호',
       };
-      // 회원 가입 로직 (userData를 사용하도록 수정)
+
       const response = await signUp(userData);
       console.log('회원 가입 성공:', response);
     } catch (error) {
@@ -58,13 +38,12 @@ class Home extends Component {
   };
 
   render() {
-    const { currentImageIndex, images, isLoggedIn } = this.state;
-    const currentImage = images[currentImageIndex];
+    const { isLoggedIn } = this.state;
 
     return (
       <div className="App" style={{ position: 'relative' }}>
-        <img src={currentImage} alt={`car ${currentImageIndex + 1}`} className="background-image" />
-
+        <ImageComponent /> {/* Render the ImageComponent */}
+        
         <Link to="/subpage">
           <button className="login-button">
             <img src={HamburgerIcon} alt="Hamburger" className="hamburger-icon" />
@@ -91,4 +70,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default HomeContent;
