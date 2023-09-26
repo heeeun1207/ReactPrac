@@ -8,7 +8,8 @@
   text-align: center;
   flex-direction: column;
   align-items: center; 
-  width: 400px;
+  width: 728px;
+  height: 754px;
 
 }
 
@@ -32,6 +33,7 @@
   flex-basis: 30%; 
   text-align: right; 
   color: white;
+  font-size: 24px;
   margin-right: 60px; 
 }
 
@@ -39,13 +41,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 160px;
-  height: 20px;
-  padding: 10px;
+  width: 327px;
+  padding: 71px;
   border-radius: 8px; 
 }
 
 .sign-title {
+  font-size: 40px;
   color: white;
   margin-bottom: 2rem;
 }
@@ -70,6 +72,8 @@
   cursor: pointer;
   border-radius: 5px; 
   margin-top: 1.2rem;
+  width: 162px;
+  height: 50px;
 }
 
 

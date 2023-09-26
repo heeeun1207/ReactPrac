@@ -6,7 +6,8 @@
   background: rgba(45, 45, 45, 1);
   padding: 20px;
   text-align: center;
-  width: 200px;
+  width: 659px;
+  height: 378px;
   z-index: 999;
 }
 
@@ -27,6 +28,7 @@
 }
 
 .login-title {
+  font-size: 40px;
   color: white;
   margin-bottom: 20px;
 }
@@ -35,8 +37,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 160px;
-  height: 20px;
+  width: 456px;
+  height: 70px;
   padding: 10px;
   border-radius: 8px; 
 }
@@ -47,6 +49,7 @@
   align-items: center;
   color: white;
   margin: 10px 0;
+  font-size: 28px;
 }
 
 .separator {
