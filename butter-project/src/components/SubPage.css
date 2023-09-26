@@ -43,3 +43,21 @@ body {
   bottom: 0; 
   right: 0; 
 }
+
+/* HIGH-END CAR STORE 문자열 스타일링 */
+.header {
+  text-align: center;
+  margin-bottom: 2rem; 
+}
+
+.title {
+  color: white;
+  font-size: 100px; 
+  font-family: 'Pretendard';
+}
+
+.contents{
+  color: white;
+  font-size: 28px; 
+  font-family: 'Pretendard';
+}
