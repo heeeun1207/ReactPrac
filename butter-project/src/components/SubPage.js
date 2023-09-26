@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SubPage.css';
+
 function SubPage() {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClick = (index) => {
+    setSelectedItem(index);
+  };
+
   return (
-    <div>
-      <h2>This is a SubPage</h2>
-      <p>Additional content for your SubPage can be added here.</p>
+    <div className="subpage-container">
+      {["High-end Car", "MAINTENANCE", "TUNING CAR", "BODY PAINT"].map((item, index) => (
+        <div
+          key={index}
+          className={`subpage-item ${index === selectedItem ? 'selected' : ''}`}
+          onClick={() => handleItemClick(index)}
+        >
+          {item}
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,5 +1,36 @@
-body{
+body {
   width: 100vw;
   height: 100vh;
-  background-color: pink;
+  background-color: rgba(35, 39, 48, 1);
+}
+
+.subpage-container {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subpage-item {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: rgba(111, 115, 124, 1);
+  cursor: pointer;
+  text-decoration: none; 
+  font-size: 32px;
+  font-family: 'Pretendard';
+}
+
+.subpage-item:hover {
+  text-decoration: underline;
+}
+
+.subpage-item::selection {
+  background-color: white; 
+  color: rgba(111, 115, 124, 1); 
+}
+
+/* 클릭한 아이템의 글자 색상을 흰색으로 설정 */
+.subpage-item.selected {
+  color: white; 
 }
