@@ -37,6 +37,7 @@
   color: white;
   margin-top: 44px;
   font-size: 72px;
+  font-family: 'pretendard';
 }
 
 /* 로그인 제목 스타일 */
@@ -49,6 +50,7 @@
   cursor: pointer;
   margin-top: 60px;
   margin-left: 41px;
+  font-family: 'pretendard';
 }
 
 .centered-text {
