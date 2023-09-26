@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './SubPage.css';
 function SubPage() {
   return (
     <div>
