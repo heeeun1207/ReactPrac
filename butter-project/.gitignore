@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # font-style
-/Pretendard-1.3.8
+/font
 
 # dependencies
 /node_modules
