@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import SubPage from './SubPage';
-import Home from './Home';
+import LoginPopup from './LoginPopup';
 import { signUp } from '../api/userApi';
-
+import './Main.css';
+import HamburgerIcon from '../assets/images/Hamburger.png';
 
 class Main extends Component {
   constructor(props) {
@@ -58,26 +58,42 @@ class Main extends Component {
       console.error('회원 가입 오류:', error.message);
     }
   };
-  
 
   render() {
     const { currentImageIndex, images, isLoggedIn } = this.state;
+    const currentImage = images[currentImageIndex];
 
     return (
       <Router>
         <div className="App" style={{ position: 'relative' }}>
-          <Home
-            currentImageIndex={currentImageIndex}
-            images={images}
-            isLoggedIn={isLoggedIn}
-            toggleLogin={this.toggleLogin}
-            handleSignUpClick={this.handleSignUpClick}
-          />
+          <img src={currentImage} alt={`car ${currentImageIndex + 1}`} className="background-image" />
 
-          <Routes>
-            <Route path="/subpage" element={<SubPage />} />
-          </Routes>
+          <Link to="/subpage">
+            <button className="login-button">
+              <img src={HamburgerIcon} alt="Hamburger" className="hamburger-icon" />
+            </button>
+          </Link>
+
+          <h1 className="app-title">BUTTER</h1>
+
+          <h2 className="reservation" onClick={this.toggleLogin}>
+            RESERVATION
+          </h2>
+
+          {!isLoggedIn && (
+            <button onClick={this.handleSignUpClick} className="signup-button">
+              Sign up
+            </button>
+          )}
+
+          {isLoggedIn && <LoginPopup />}
+
+          <div className="centered-text">For the high-end</div>
         </div>
+
+        <Routes>
+          <Route path="/subpage" element={<SubPage />} />
+        </Routes>
       </Router>
     );
   }
