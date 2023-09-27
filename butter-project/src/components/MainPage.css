@@ -41,7 +41,7 @@
 }
 
 /* 로그인 제목 스타일 */
-.reservation{
+.reservation {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,15 +52,16 @@
   margin-left: 41px;
   font-size: 32px;
   font-family: 'pretendard';
+  text-decoration: underline; 
 }
 
 .centered-text {
   position: absolute;
-  left: 50%;
+  left: 44%;
   transform: translate(-50%, -50%) rotate(-8deg); 
   color: white; 
   font-size: 135px; 
   text-align: center; 
-  margin-top: 30%;
+  margin-top: 24%;
   font-family: 'Victorian Decade Demo Version'; 
 }

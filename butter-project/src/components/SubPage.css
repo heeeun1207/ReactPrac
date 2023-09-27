@@ -37,8 +37,8 @@ body {
 .image5 {
   margin-right: 6rem;
   margin-bottom: 6rem;
-  width: 60%; 
-  height: 60%; 
+  width: 1060px; 
+  height: 624px; 
   position: absolute; 
   bottom: 0; 
   right: 0; 
@@ -52,7 +52,7 @@ body {
 
 .title {
   top: 30%;
-  left: 4%;
+  left: 10%;
   position: absolute;
   color: white;
   font-size: 100px; 
@@ -62,7 +62,7 @@ body {
 }
 .title2{
   top : 44%;
-  left: 4%;
+  left: 10%;
   position: absolute;
   color: white;
   font-size: 100px; 
@@ -72,7 +72,7 @@ body {
 
 .contents{
   top: 62%;
-  left: 4%;
+  left: 10%;
   position: absolute;
   color: rgba(111, 115, 124, 1);
   font-size: 28px; 
@@ -80,7 +80,7 @@ body {
 }
 .contents2{
   top: 66%;
-  left: 4%;
+  left: 10%;
   position: absolute;
   color: rgba(111, 115, 124, 1);
   font-size: 28px; 
@@ -94,7 +94,7 @@ body {
   color: rgba(111, 115, 124, 1);
   text-decoration: underline;
   bottom: 6rem; 
-  left: 8rem; 
+  left: 10%; 
   font-size: 24px; 
   font-family: 'Pretendard'; 
 }
