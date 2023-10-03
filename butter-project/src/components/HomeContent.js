@@ -4,6 +4,7 @@ import LoginPopup from './LoginPopup';
 import { signUp } from '../api/userApi';
 import HamburgerIcon from '../assets/images/Hamburger.png';
 import ImageComponent from './ImageComponent'; 
+import './HomeContent.css';
 
 class HomeContent extends Component {
   constructor(props) {
